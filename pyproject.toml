@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "line-msg-api"
+version = "1.0.0"
+description = "MCP server for sending LINE messages via Messaging API"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.12.0",
+]
+
+[project.scripts]
+line-mcp = "line_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["line_mcp"]
